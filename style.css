@@ -96,18 +96,89 @@ p{
 
 ::backdrop {
     background-image: linear-gradient(
-      45deg,
-      yellow,
-      blue
+      0deg,
+      #0b77a8,
+      white,
+      #e6d03e
     );
-    opacity: 0.75;
+    opacity: 0.76;
   }
   dialog {
     display: none;
+    align-self: center;
+    justify-self: center;
   }
   
   dialog[open] {
+    height: 400px;
+    width: 300px;
+    background-color: #e6d03e;
     display: flex;
     justify-content: center;
   }
+
+  #form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #form-title {
+    margin-top: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  #form-items{
+    display: flex;
+    flex-flow: column;
+    font-size: 1.7rem;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+  }
+
+  input{
+    height: 30px;
+    padding: 0px 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .form-item-sections{
+    display: flex;
+    flex-flow: column;
+  }
+
+  #form-buttons{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+  }
+
+  #close{
+    background-color: black; 
+    border: 2px solid white;
+    color: white;
+    border-radius: 45px;
+    font-size: 1.3rem;
+    height: 40px;
+    width: 100px;
+  }
+
+   #submit{
+    background-color: #0b77a8; 
+    border: 2px solid black;
+    color: white;
+    border-radius: 45px;
+    font-size: 1.3rem;
+    height: 40px;
+    width: 100px;
+  }
+
+
+
+
   

@@ -7,9 +7,10 @@ let book2 = new Book("1984", 'George Orwell', 'read');
 
 myLibrary.push(book1, book2);
 
-function Book(title, author, read) {
+function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
+  this.pages = pages;
   this.read = read;
 }
 
