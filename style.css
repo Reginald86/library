@@ -110,7 +110,7 @@ p{
   }
   
   dialog[open] {
-    height: 400px;
+    height: 436px;
     width: 300px;
     background-color: #e6d03e;
     display: flex;
@@ -128,12 +128,14 @@ p{
     margin-top: 20px;
     font-size: 2rem;
     font-weight: bold;
+    border-bottom: 2px solid black;
   }
 
   #form-items{
     display: flex;
     flex-flow: column;
     font-size: 1.7rem;
+    font-weight: bold;
     align-items: center;
     justify-content: center;
     gap: 13px;
@@ -145,11 +147,14 @@ p{
     font-size: 1.1rem;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
+    border: 2px solid black;
+    
   }
 
   .form-item-sections{
     display: flex;
     flex-flow: column;
+    gap: 3px;
   }
 
   #form-buttons{
@@ -176,6 +181,22 @@ p{
     font-size: 1.3rem;
     height: 40px;
     width: 100px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: normal;
+  }
+
+  #form-item-read{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 13px;
+  }
+
+  .form-read{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
   }
 
 

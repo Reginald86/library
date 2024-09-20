@@ -2,8 +2,8 @@ let container = document.getElementById("container");
 
 const myLibrary = [];
 
-let book1 = new Book("1984", 'George Orwell', 'read');
-let book2 = new Book("1984", 'George Orwell', 'read'); 
+let book1 = new Book("1984", 'George Orwell', '300', 'read');
+let book2 = new Book("1984", 'George Orwell', '300', 'read'); 
 
 myLibrary.push(book1, book2);
 
@@ -32,7 +32,7 @@ function addBookToLibrary() {
       square.className = 'square';
       
       // Add book info to the square
-      square.textContent = `${book.title} by ${book.author} (${book.read})`;
+      square.textContent = `${book.title} by ${book.author}; ${book.pages} pages (${book.read})`;
 
       // Append the square to the row
       row.appendChild(square);
