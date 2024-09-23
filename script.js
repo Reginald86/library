@@ -1,11 +1,9 @@
 let container = document.getElementById("container");
 
+
 const myLibrary = [];
 
-let book1 = new Book("1984", 'George Orwell', '300', 'read');
-let book2 = new Book("1984", 'George Orwell', '300', 'read'); 
 
-myLibrary.push(book1, book2);
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -16,28 +14,47 @@ function Book(title, author, pages, read) {
 
 function addBookToLibrary() {
 
+  let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
+  let pages = document.getElementById('pages').value;
+  let read = document.getElementById('read').checked;
+  let newBook = new Book(title, author, pages, read);
+  
+  myLibrary.push(newBook);
+
+ displayBook(title, author, pages, read);
+
 }
     
+function displayBook(title, author, pages, read) {
 
-  for (let i = 0; i < myLibrary.length; i += 3) {
-    const row = document.createElement('div');
-    row.className = 'row';
-    container.appendChild(row);
-    for (let j = i; j < i + 3  && j < myLibrary.length; j++) {
-      
-      const book = myLibrary[j];
+  
+   let square = document.querySelector(".square");
+   let clone = square.cloneNode(true);
+   clone.className = "clone";
+   let sqTitle = clone.querySelector("#sqTitle");
+   let sqAuthor = clone.querySelector("#sqAuthor");
+   let sqPages = clone.querySelector("#sqPages");
+   let sqRead = clone.querySelector("#sqRead");
+   sqTitle.textContent = title;
+   sqAuthor.textContent =  author;
+   sqPages.textContent = pages;
+   sqRead.textContent = read ? "Yes" : "No";
+  let readButton = clone.querySelector("#readButton");
+  let deleteButton = clone.querySelector("#delete");
 
-      // Create a square for each book
-      const square = document.createElement('div');
-      square.className = 'square';
-      
-      // Add book info to the square
-      square.textContent = `${book.title} by ${book.author}; ${book.pages} pages (${book.read})`;
+  deleteButton.addEventListener('click', () => {
+    container.removeChild(clone);
+  });
+ 
+  readButton.addEventListener("click", () => {
+    sqRead.textContent = sqRead.textContent === "Yes" ? "No" : "Yes";
+  });
 
-      // Append the square to the row
-      row.appendChild(square);
-    }
-  }
+  container.appendChild(clone);
+}
+
+
 
 let addBook = document.getElementById('addBook');
 let modal = document.getElementById('dialog');
@@ -47,9 +64,23 @@ addBook.addEventListener('click', () => {
       modal.showModal();
     });
   
-closeModal.addEventListener('click', () => {
+closeModal.addEventListener('click', (e) => {
+      e.preventDefault();
       modal.close();
-    })
+      form.reset()
+    });
 
   
+const form = document.getElementById("form");
+   
+ form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    addBookToLibrary();
+    modal.close()
+    form.reset()
+
+ });
+
+
+
 

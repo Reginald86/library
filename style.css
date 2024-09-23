@@ -31,7 +31,7 @@ h1{
     align-items: center;
 }
 
-#title{
+#header-title{
     display: flex;
     align-items: center;
     gap: 30px;
@@ -69,29 +69,75 @@ p{
     height: auto;
     background-color: #e6d03e;
     display: flex;
-    flex-flow: column;
     justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
     padding: 19px 50px;
     gap: 30px;
 }
 
-.row{
-    display: flex;
-    width: 100%;
-    height: 250px;
-    gap: 19px;
-    border: 1px solid black;
+.square{
+   display: none; 
 }
 
-.square{
-    width: 33%;
-    height: 100%;
-    border-left: 9px solid #0b77a8;
-    border-right: 9px solid #0b77a8;
-    border-top: 5px solid black;
-    border-bottom: 5px solid black;
-    background-color: white;
-    border-radius: 13px;
+.clone{
+
+  width: 95%;;
+  min-height: 120px;
+  border-left: 11px solid #0b77a8;
+  border-right: 11px solid #0b77a8;
+  border-top: 5px solid black;
+  border-bottom: 5px solid black;
+  background-color: white;
+  border-radius: 13px;
+  display: flex;
+  align-items: space-around;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 0px 20px;
+
+}
+
+#sqTitle, #sqAuthor, #sqPages, #sqRead{
+  font-size: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sqSection{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+
+#readButton {
+  height: auto;
+  width: 100px;
+  background-color:#e6d03e;
+  border-radius: 36px;
+  font-size: 1.3rem;
+  border: 5px solid #0b77a8;
+  color: #0b77a8;
+  font-weight: bolder;
+}
+
+#delete{
+  height: auto;
+  width: 100px;
+  background-color: red;
+  color: white;
+  border-radius: 36px;
+  font-size: 1.3rem;
+  border: 3px solid black;
+  font-weight: bolder;
+
+}
+
+span{
+  border-bottom: 3px solid #0b77a8;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 2rem;
 }
 
 ::backdrop {

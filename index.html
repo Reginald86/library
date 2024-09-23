@@ -10,68 +10,77 @@
 <body>
        
     <div id = "header">
-        <div id = "title">
+        <div id = "header-title">
             <img src = "images/pitbull.jpg" alt="wise pitbull" id="icon">
             <h1>Reginald's Library</h1>
         </div>
         <div id = "header-container">
-
             <button id = "addBook">
                 <img src = "images/add.jpg" alt = "add" id="add-icon">
                 <p>Add book</p>
             </button>
-      
-            
-           
-           
-           
         </div>
     </div>
+
     <div id = "container">
+        <div class = "square">
+            <div class = "sqSection">
+                <p><span>Title: </span></p>
+                <p id = "sqTitle"> 1984</p>
+            </div>
 
-                      
-        <dialog id = "dialog">
-            
-            <form id = "form">
-                <div id = "form-title">Enter Book Info</div>
+            <div class = "sqSection">
+                <p><span>Author: </span></p>
+                <p id = "sqAuthor"> George Orwell</p>  
+            </div> 
 
-                <div id = "form-items">
-                    <div class = "form-item-sections">
-                        <label for = "title">Title: </label>
-                        <input type = "text" id = "title">
-                    </div>
-                    <div class = "form-item-sections">
-                        <label for = "author">Author: </label>
-                        <input type = "text" id = "author">
-                    </div>
-                    <div class = "form-item-sections">
-                        <label for = "pages"># of Pages: </label>
-                        <input type = "text" id = "pages">
-                    </div>
-                    <div id = "form-item-read">
-                        <div class = "form-read">
-                            <input type = "radio" id = "read" name="readStatus">
-                            <label for="read">Read</label>
-                        </div>
-                        <div class = "form-read">
-                            <input type = "radio" id = "notRead" name="readStatus">
-                            <label for="notRead">Not read</label>
-                        </div>
-                    </div>
-                    
+            <div class = "sqSection">
+                <p><span># of Pages: </span></p>
+                <p id = "sqPages">328</p>
+            </div>
 
-                </div>
+            <div class = "sqSection">
+                <p><span>Read: </span></p>
+                <p id = "sqRead">Yes</p>
+            </div>  
 
-                <div id = "form-buttons">
-                <input type = "submit" id = "submit"></input>
-                <button id = "close">Close</button>
-                </div>
-            </form>
-        </dialog>
-      
-
-
+            <div class = "sqSection">
+                <button id ="readButton">Read</button>
+                <button id ="delete">Delete</button>
+            </div>
+        </div>             
     </div>
+
+    <dialog id = "dialog"> 
+        <form id = "form">
+            <div id = "form-title">Enter Book Info</div>
+
+            <div id = "form-items">
+                <div class = "form-item-sections">
+                    <label for = "title">Title: </label>
+                    <input type = "text" id = "title">
+                </div>
+                <div class = "form-item-sections">
+                    <label for = "author">Author: </label>
+                    <input type = "text" id = "author">
+                </div>
+                <div class = "form-item-sections">
+                    <label for = "pages"># of Pages: </label>
+                    <input type = "text" id = "pages">
+                </div>
+                <div id = "form-item-read">
+                    <div class = "form-read">
+                        <input type = "checkbox" id = "read" name="readStatus">
+                        <label for="read">Read</label>
+                    </div>
+                </div>
+            </div>
+            <div id = "form-buttons">
+            <input type = "submit" id = "submit"></input>
+            <button id = "close">Close</button>
+            </div>
+        </form>
+    </dialog>
     
     <script src="script.js"></script>
 </body>
