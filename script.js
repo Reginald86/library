@@ -54,6 +54,15 @@ function displayBook(title, author, pages, read) {
   container.appendChild(clone);
 }
 
+function addInitialBook() {
+  if (myLibrary.length === 0) {
+    let book1 = new Book("1984", "George Orwell", "328", true);
+    myLibrary.push(book1);
+    displayBook(book1.title, book1.author, book1.pages, book1.read);
+  }
+}
+
+addInitialBook();
 
 
 let addBook = document.getElementById('addBook');
