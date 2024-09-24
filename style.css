@@ -92,8 +92,9 @@ p{
   background-color: white;
   border-radius: 13px;
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-around; 
   padding: 20px 20px;
+  padding-left: 36px;
 }
 
 #sqTitle, #sqAuthor, #sqPages, #sqRead {
@@ -107,15 +108,16 @@ p{
   flex-flow: column;
   align-items: flex-start;
   min-width: 150px; 
-  gap: 13px; 
+  gap: 13px;
 }
 
 #sqTitleSection{
   max-width: 320px;
+  min-width: 200px;
 }
 
 #buttonSection{
-  gap: 20px;
+  justify-content: space-around;
 }
 
 
