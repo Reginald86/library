@@ -24,27 +24,27 @@
 
     <div id = "container">
         <div class = "square">
-            <div class = "sqSection">
-                <p><span>Title: </span></p>
+            <div class = "sqSection" id = "sqTitleSection">
+                <p><span>Title</span></p>
                 <p id = "sqTitle"> 1984</p>
             </div>
 
             <div class = "sqSection">
-                <p><span>Author: </span></p>
+                <p><span>Author</span></p>
                 <p id = "sqAuthor"> George Orwell</p>  
             </div> 
 
             <div class = "sqSection">
-                <p><span># of Pages: </span></p>
+                <p><span>Pages</span></p>
                 <p id = "sqPages">328</p>
             </div>
 
             <div class = "sqSection">
-                <p><span>Read: </span></p>
+                <p><span>Read</span></p>
                 <p id = "sqRead">Yes</p>
             </div>  
 
-            <div class = "sqSection">
+            <div class = "sqSection" id = "buttonSection">
                 <button id ="readButton">Read</button>
                 <button id ="delete">Delete</button>
             </div>
@@ -53,20 +53,23 @@
 
     <dialog id = "dialog"> 
         <form id = "form">
-            <div id = "form-title">Enter Book Info</div>
+            <div id = "form-title">New Book Info</div>
 
             <div id = "form-items">
                 <div class = "form-item-sections">
                     <label for = "title">Title: </label>
-                    <input type = "text" id = "title">
+                    <input type = "text" id = "title" maxlength = "100"  placeholder="Frankenstein" autofocus autocomplete required>
+                    <comment>100 characters max</comment>
                 </div>
                 <div class = "form-item-sections">
                     <label for = "author">Author: </label>
-                    <input type = "text" id = "author">
+                    <input type = "text" id = "author" maxlength = "35"  placeholder="Mary Shelley" autocomplete required>
+                    <comment>35 characters max</comment>
                 </div>
                 <div class = "form-item-sections">
                     <label for = "pages"># of Pages: </label>
-                    <input type = "text" id = "pages">
+                    <input type = "number" id = "pages" max = "7"  placeholder = "199" required>
+                    <comment>7 characters max</comment>
                 </div>
                 <div id = "form-item-read">
                     <div class = "form-read">

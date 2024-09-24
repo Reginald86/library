@@ -1,9 +1,6 @@
 let container = document.getElementById("container");
 
-
 const myLibrary = [];
-
-
 
 function Book(title, author, pages, read) {
   this.title = title;
@@ -30,7 +27,7 @@ function displayBook(title, author, pages, read) {
 
   
    let square = document.querySelector(".square");
-   let clone = square.cloneNode(true);
+   let clone = square.cloneNode(true);  // create clone of square tag
    clone.className = "clone";
    let sqTitle = clone.querySelector("#sqTitle");
    let sqAuthor = clone.querySelector("#sqAuthor");
@@ -43,27 +40,38 @@ function displayBook(title, author, pages, read) {
   let readButton = clone.querySelector("#readButton");
   let deleteButton = clone.querySelector("#delete");
 
-  deleteButton.addEventListener('click', () => {
+  deleteButton.addEventListener('click', (e) => {
     container.removeChild(clone);
+    myLibrary.forEach((element, index) => {  //remove specific value from myLibrary array
+      if(element.title === title &&
+        element.author === author && 
+        element.pages === pages) {
+        myLibrary.splice(index, 1);
+      }
+    });
   });
  
   readButton.addEventListener("click", () => {
-    sqRead.textContent = sqRead.textContent === "Yes" ? "No" : "Yes";
+    sqRead.textContent = sqRead.textContent === "Yes" ? "No" : "Yes";  //ternary to toggle read status
   });
 
   container.appendChild(clone);
+  console.log(myLibrary.length)
+  myLibrary.forEach(element => {
+    console.log(element);
+});
 }
 
-function addInitialBook() {
+function addInitialBook() {  // add one (or more) book(s) onload of window.
   if (myLibrary.length === 0) {
     let book1 = new Book("1984", "George Orwell", "328", true);
     myLibrary.push(book1);
     displayBook(book1.title, book1.author, book1.pages, book1.read);
   }
 }
-
-addInitialBook();
-
+window.onload = () => {  // show books onload
+  addInitialBook();
+};
 
 let addBook = document.getElementById('addBook');
 let modal = document.getElementById('dialog');
@@ -74,7 +82,7 @@ addBook.addEventListener('click', () => {
     });
   
 closeModal.addEventListener('click', (e) => {
-      e.preventDefault();
+      e.preventDefault();  //stop form from being pushed to addBooktoLibrary
       modal.close();
       form.reset()
     });
@@ -89,7 +97,6 @@ const form = document.getElementById("form");
     form.reset()
 
  });
-
-
+//To anyone reading this, I would love recommnedations to improve code.
 
 

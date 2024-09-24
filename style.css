@@ -14,6 +14,7 @@ body{
 #header{
     height: 130px;
     width: 100%;
+    min-width: fit-content;
     border-bottom: 5px solid #0b77a8;
     background-color: white;
     display: flex;
@@ -80,10 +81,10 @@ p{
    display: none; 
 }
 
-.clone{
-
-  width: 95%;;
-  min-height: 120px;
+.clone {
+  width: 100%;
+  min-width: fit-content;
+  height: auto;
   border-left: 11px solid #0b77a8;
   border-right: 11px solid #0b77a8;
   border-top: 5px solid black;
@@ -91,25 +92,32 @@ p{
   background-color: white;
   border-radius: 13px;
   display: flex;
-  align-items: space-around;
-  justify-content: space-around;
-  gap: 30px;
-  padding: 0px 20px;
-
+  justify-content: space-between; 
+  padding: 20px 20px;
 }
 
-#sqTitle, #sqAuthor, #sqPages, #sqRead{
+#sqTitle, #sqAuthor, #sqPages, #sqRead {
   font-size: 1.3rem;
-  display: flex;
-  flex-wrap: wrap;
+  display: block; 
+  text-align: left; 
 }
 
-.sqSection{
+.sqSection {
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
   align-items: flex-start;
+  min-width: 150px; 
+  gap: 13px; 
 }
+
+#sqTitleSection{
+  max-width: 320px;
+}
+
+#buttonSection{
+  gap: 20px;
+}
+
 
 #readButton {
   height: auto;
@@ -121,6 +129,7 @@ p{
   color: #0b77a8;
   font-weight: bolder;
 }
+
 
 #delete{
   height: auto;
@@ -156,11 +165,13 @@ span{
   }
   
   dialog[open] {
-    height: 436px;
+    height: 463px;
     width: 300px;
     background-color: #e6d03e;
     display: flex;
     justify-content: center;
+    border: 3px solid black;
+    border-radius: 13px;
   }
 
   #form{
@@ -171,7 +182,7 @@ span{
   }
 
   #form-title {
-    margin-top: 20px;
+    margin-top: 9px;
     font-size: 2rem;
     font-weight: bold;
     border-bottom: 2px solid black;
@@ -243,6 +254,11 @@ span{
     align-items: center;
     justify-content: center;
     gap: 5px;
+  }
+
+  comment{
+    font-size: .7rem;
+    color: red;
   }
 
 
